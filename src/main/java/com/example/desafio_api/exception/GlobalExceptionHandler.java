@@ -1,5 +1,7 @@
 package com.example.desafio_api.exception;
 
+import jakarta.validation.ConstraintViolation;
+import jakarta.validation.ConstraintViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -10,6 +12,7 @@ import org.springframework.web.server.ResponseStatusException;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 @RestControllerAdvice
 public class GlobalExceptionHandler {
@@ -53,6 +56,23 @@ public class GlobalExceptionHandler {
         return errors;
     }
 
+
+    @ExceptionHandler(ConstraintViolationException.class)
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    @ResponseBody
+    public Map<String, String> handleConstraintViolationException(ConstraintViolationException ex) {
+        Set<ConstraintViolation<?>> violations = ex.getConstraintViolations();
+
+        String errorMessage = violations.stream()
+                .map(violation -> violation.getMessage())
+                .findFirst()
+                .orElse("Invalid input");
+
+        Map<String, String> errors = new HashMap<>();
+        errors.put("message", errorMessage);
+
+        return errors;
+    }
 
 
 }
