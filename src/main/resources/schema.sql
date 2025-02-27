@@ -1,0 +1,8 @@
+CREATE TABLE IF NOT EXISTS usuario (
+    id SERIAL PRIMARY KEY,
+    fullName VARCHAR(50) NOT NULL,
+    email VARCHAR NOT NULL,
+    phone VARCHAR NOT NULL,
+    birthDate DATE NOT NULL,
+    userType VARCHAR NOT NULL
+);
