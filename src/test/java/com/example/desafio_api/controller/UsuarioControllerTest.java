@@ -35,12 +35,12 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 class UsuarioControllerTest {
 
     @InjectMocks
-    UsuarioController usuarioController;
+    private UsuarioController usuarioController;
 
     @Mock
-    UsuarioService usuarioService;
+    private UsuarioService usuarioService;
 
-    MockMvc mockMvc;
+    private MockMvc mockMvc;
 
     private final ObjectMapper objectMapper = new ObjectMapper().registerModule(new JavaTimeModule());
 
