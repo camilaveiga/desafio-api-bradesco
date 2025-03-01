@@ -68,7 +68,30 @@ GET /api/users: Lista todos os usuários
 
 GET /api/users/{id}: Busca um usuário pelo ID
 
+ex: http:localhost:8080/api/users/1
+
+```json
+{
+	"fullName": "Camila Veiga",
+	"email": "camilaveiga@gmail.com",
+	"phone": "+55 11 9876-54321",
+	"birthDate": "2002-04-05",
+	"userType": "ADMIN"
+}
+```
 PUT /api/users/{id}: Atualiza os dados de um usuário
+
+ex: http:localhost:8080/api/users/1
+
+```json
+{
+	"fullName": "Camila Batista Veiga",
+	"email": "camilaveiga@gmail.com",
+	"phone": "+55 11 9876-54321",
+	"birthDate": "2002-04-05",
+	"userType": "ADMIN"
+}
+```
 
 DELETE /api/users/{id}: Deleta um usuário
 
