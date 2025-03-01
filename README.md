@@ -35,7 +35,7 @@ POST /api/users: Adiciona um novo usuário
 
 ```json
 {
-	"fullName": "Camila Veiga",
+	"fullName": "Camila Camargo",
 	"email": "camilaveiga@gmail.com",
 	"phone": "+55 11 9876-54321",
 	"birthDate": "2002-04-05",
@@ -72,10 +72,11 @@ ex: http:localhost:8080/api/users/1
 
 ```json
 {
-	"fullName": "Camila Veiga",
+	"id": 1,
+	"fullName": "Camila Camargo",
 	"email": "camilaveiga@gmail.com",
-	"phone": "+55 11 9876-54321",
-	"birthDate": "2002-04-05",
+	"phone": "+55 11 94127-7110",
+	"birthDate": "2002-04-05T00:00:00.000+00:00",
 	"userType": "ADMIN"
 }
 ```
@@ -85,10 +86,11 @@ ex: http:localhost:8080/api/users/1
 
 ```json
 {
-	"fullName": "Camila Batista Veiga",
+	"id": 1,
+	"fullName": "Camila Veiga",
 	"email": "camilaveiga@gmail.com",
-	"phone": "+55 11 9876-54321",
-	"birthDate": "2002-04-05",
+	"phone": "+55 11 94127-7110",
+	"birthDate": "2002-04-05T00:00:00.000+00:00",
 	"userType": "ADMIN"
 }
 ```
